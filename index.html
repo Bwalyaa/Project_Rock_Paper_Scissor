@@ -7,54 +7,64 @@
     <title>Rock, Paper & Scissors - Game</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/mobile.css">
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Rock, Paper & Scissors - Game</h1>
-    </header>
     <main>
-        <section class="rounds">
-            <select name="rounds" id="rounds" onchange="roundsOptions()">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-            </select>
-            <div class="movesDisplay">
-                <p class="remainingMoves"></p>
-            </div>
-        </section>
-        <section class="scoreboard">
-            <div class="player">
-                <h2>You</h2>
-                <div class="playerChoice">
-                    <p class="playerChoiceEmoji">👊</p>
+        <section id="theGame">
+            <div class="window" style="margin: 2rem; width: 100%">
+                <div class="title-bar">
+                    <div class="title-bar-text">
+                        Rock, Paper, ScissorzZzz - by Bwalya & Florian</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Minimize"></button>
+                        <button aria-label="Maximize"></button>
+                        <button aria-label="Close"></button>
+                    </div>
                 </div>
-                <p class="playerScore">0</p>
+                <section class="rounds">
+                    <select name="rounds" id="rounds" onchange="roundsOptions()">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                    <div class="movesDisplay">
+                        <p class="remainingMoves"></p>
+                    </div>
+                </section>
+                <section class="scoreboard">
+                    <div class="player">
+                        <h2>You</h2>
+                        <div class="playerChoice">
+                            <p class="playerChoiceEmoji">👊</p>
+                        </div>
+                        <p class="playerScore">0</p>
+                    </div>
+                    <div class="dividerWrapper">
+                        <p class="divider">:</p>
+                    </div>
+                    <div class="computer">
+                        <h2>Computer</h2>
+                        <div class="computerChoice">
+                            <p class="computerChoiceEmoji">🤚</p>
+                        </div>
+                        <p class="computerScore">0</p>
+                    </div>
+                </section>
+                <section class="userInput">
+                    <p class="result">Let's play!</p>
+                    <div class="buttons">
+                        <button class="rock">👊</button>
+                        <button class="paper">🤚</button>
+                        <button class="scissor">✌️</button>
+                    </div>
+                    <button class="reset">Restart</button>
+                </section>
             </div>
-            <div class="dividerWrapper">
-                <p class="divider">:</p>
-            </div>
-            <div class="computer">
-                <h2>Computer</h2>
-                <div class="computerChoice">
-                    <p class="computerChoiceEmoji">🤚</p>
-                </div>
-                <p class="computerScore">0</p>
-            </div>
-        </section>
-        <section class="userInput">
-            <p class="result">Let's play!</p>
-            <div class="buttons">
-                <button class="rock">👊</button>
-                <button class="paper">🤚</button>
-                <button class="scissor">✌️</button>
-            </div>
-            <button class="reset">Restart</button>
         </section>
     </main>
-    <footer></footer>
     <script src="./assets/js/main.js"></script>
 </body>
 
