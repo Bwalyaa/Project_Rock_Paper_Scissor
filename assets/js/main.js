@@ -32,8 +32,8 @@ const mainGame = () => {
 
     if (player === computer) {
       displayResult.textContent = "It's a draw for this round!";
-    } else if (player == "rock") {
-      if (computer == "paper") {
+    } else if (player == "👊") {
+      if (computer == "🤚") {
         displayResult.textContent = "The computer won this round!";
         computerScore++;
         displayComputerScore.textContent = computerScore;
@@ -42,8 +42,8 @@ const mainGame = () => {
         playerScore++;
         displayPlayerScore.textContent = playerScore;
       }
-    } else if (player == "paper") {
-      if (computer == "scissors") {
+    } else if (player == "🤚") {
+      if (computer == "✌️") {
         displayResult.textContent = "The computer won this round!";
         computerScore++;
         displayComputerScore.textContent = computerScore;
@@ -52,8 +52,8 @@ const mainGame = () => {
         playerScore++;
         displayPlayerScore.textContent = playerScore;
       }
-    } else if (player == "scissors") {
-      if (computer == "rock") {
+    } else if (player == "✌️") {
+      if (computer == "👊") {
         displayResult.textContent = "The computer won this round!";
         computerScore++;
         displayComputerScore.textContent = computerScore;
@@ -63,8 +63,6 @@ const mainGame = () => {
         displayPlayerScore.textContent = playerScore;
       }
     }
-    displayPlayerScore.textContent = playerScore;
-    displayComputerScore.textContent = computerScore;
   };
 
   // Ende des Spiels
@@ -109,12 +107,15 @@ const mainGame = () => {
     computerScoreDisplay.textContent = "0";
   };
 
+  const resetButton = document.querySelector(".reset");
+  resetButton.addEventListener("click", resetTheGame);
+
   const gamePlay = () => {
     const rockButton = document.querySelector(".rock");
     const paperButton = document.querySelector(".paper");
     const scissorButton = document.querySelector(".scissor");
     const userChoices = [rockButton, paperButton, scissorButton];
-    const computerChoices = ["rock", "paper", "scissors"];
+    const computerChoices = ["👊", "🤚", "✌️"];
 
     userChoices.forEach((choice) => {
       choice.addEventListener("click", () => {
@@ -132,12 +133,22 @@ const mainGame = () => {
         if (moves >= selectedRounds) {
           gameOver();
         }
+
+        // Spieler und Computer Choice anzeigen
+
+        const displayPlayerChoice =
+          document.querySelector(".playerChoiceEmoji");
+        const displayComputerChoice = document.querySelector(
+          ".computerChoiceEmoji"
+        );
+
+        displayPlayerChoice.textContent = choice.innerText;
+        displayComputerChoice.textContent = computerChoice;
       });
     });
   };
 
   // Spiel laden
-
   roundsOptions();
   updateRemainingMoves();
   gamePlay();

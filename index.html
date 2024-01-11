@@ -15,18 +15,6 @@
     </header>
     <main>
         <section class="rounds">
-            <!-- Versuch mit Radio Buttons -->
-            <!-- <div class="roundsSelector">
-                <label for="rounds">Number of Rounds:</label>
-                <input type="radio" name="rounds" id="5" value="5">
-                <label for="5">5</label>
-                <input type="radio" name="rounds" id="10" value="10">
-                <label for="10">10</label>
-                <input type="radio" name="rounds" id="15" value="15">
-                <label for="15">15</label>
-                <input type="radio" name="rounds" id="20">
-                <label for="20" aria-valuemax="20">20</label>
-            </div> -->
             <select name="rounds" id="rounds" onchange="roundsOptions()">
                 <option value="5">5</option>
                 <option value="10">10</option>
@@ -34,7 +22,7 @@
                 <option value="20">20</option>
             </select>
             <div class="movesDisplay">
-                <p class="remainingMoves">Moves left: 10</p>
+                <p class="remainingMoves"></p>
             </div>
         </section>
         <section class="scoreboard">
@@ -43,7 +31,7 @@
                 <div class="playerChoice">
                     <p class="playerChoiceEmoji">👊</p>
                 </div>
-                <p class="playerScore">2</p>
+                <p class="playerScore">0</p>
             </div>
             <div class="dividerWrapper">
                 <p class="divider">:</p>
@@ -53,7 +41,7 @@
                 <div class="computerChoice">
                     <p class="computerChoiceEmoji">🤚</p>
                 </div>
-                <p class="computerScore">5</p>
+                <p class="computerScore">0</p>
             </div>
         </section>
         <section class="userInput">
