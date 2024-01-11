@@ -116,13 +116,6 @@ const mainGame = () => {
     const userChoices = [rockButton, paperButton, scissorButton];
     const computerChoices = ["rock", "paper", "scissors"];
 
-    // Auswahl der Rundenanzahl - Gibt True oder False
-    // Lösung mit Radio Buttons
-    // const fiveRounds = document.getElementById("5").checked;
-    // const tenRounds = document.getElementById("10").checked;
-    // const fifteenRounds = document.getElementById("15").checked;
-    // const twentyRounds = document.getElementById("20").checked;
-
     userChoices.forEach((choice) => {
       choice.addEventListener("click", () => {
         moves++;
