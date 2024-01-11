@@ -1,7 +1,87 @@
-/* Global Styles */
-
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Comic Sans MS', cursive;
+  background-color: #ffe4c4;
+}
+
+header, main, footer {
+  text-align: center;
+}
+
+h1, h2 {
+  color: #ff4500;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fffacd; 
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.userInput {
+    background-color: #fffacd; 
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.player, .computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  margin: 10px;
+}
+
+.dividerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  margin: 0 10px;
+}
+
+.player {
+  margin-left: 70px;
+}
+
+.computer {
+  margin-right: 70px;
+}
+
+.rounds {
+  background-color: #fffacd; 
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.playerChoiceEmoji, .computerChoiceEmoji {
+  font-size: 100px; 
+}
+
+.buttons button {
+  font-size: 30px; 
+  padding: 20px;  
+  margin: 20px;
+}
+
+.reset {
+  font-size: 15px;
+}
+
