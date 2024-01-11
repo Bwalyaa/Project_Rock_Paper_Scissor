@@ -1,16 +1,17 @@
 // Rock Paper Scissor Game Logik
 
+// Globaler Scope
+let selectedRounds = 0;
+
+// Auswahl der Rundenanzahl
+const roundsOptions = () => {
+  selectedRounds = parseInt(document.getElementById("rounds").value);
+};
+
 const mainGame = () => {
   let playerScore = 0;
   let computerScore = 0;
   let moves = 0;
-  let totalRounds = 0;
-  let selectedRounds = 0;
-
-  // Auswahl der Rundenanzahl
-  const roundsOptions = () => {
-    let selectedRounds = parseInt(document.getElementById("rounds").value);
-  };
 
   // Aktualisieren der verbleibenden Züge
 
@@ -62,9 +63,11 @@ const mainGame = () => {
         displayPlayerScore.textContent = playerScore;
       }
     }
+    displayPlayerScore.textContent = playerScore;
+    displayComputerScore.textContent = computerScore;
   };
 
-  // Endes des Spiels / Game Over
+  // Ende des Spiels
 
   const gameOver = () => {
     const playerButtons = document.querySelector(".userInput");
@@ -84,11 +87,9 @@ const mainGame = () => {
   // Funktion zum resetten des Spiels
 
   const resetTheGame = () => {
-    let playerScore = 0;
-    let computerScore = 0;
-    let moves = 0;
-    let totalRounds = 0;
-    let selectedRounds = 0;
+    playerScore = 0;
+    computerScore = 0;
+    moves = 0;
 
     // User Buttons wieder einblenden
     const playerButtons = document.querySelector(".userInput");
@@ -99,11 +100,14 @@ const mainGame = () => {
 
     // Call to Action wieder anzeigen!
     const resultDisplay = document.querySelector(".result");
-    resultDisplay.textContent = "Let's play a game!!!"
+    resultDisplay.textContent = "Let's play a game!!!";
 
     // Punkte zurücksetzen
-    const pla
-  }
+    const playerScoreDisplay = document.querySelector(".playerScore");
+    const computerScoreDisplay = document.querySelector(".computerScore");
+    playerScoreDisplay.textContent = "0";
+    computerScoreDisplay.textContent = "0";
+  };
 
   const gamePlay = () => {
     const rockButton = document.querySelector(".rock");
@@ -127,7 +131,24 @@ const mainGame = () => {
         // Choice vom Computer
         const choiceNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerChoices[choiceNumber];
+
+        // Gewinner ermitteln
+        whoWins(choice.innerText, computerChoice);
+
+        // Überprüfen ob das Spiel vorbei ist
+        if (moves >= selectedRounds) {
+          gameOver();
+        }
       });
     });
   };
+
+  // Spiel laden
+
+  roundsOptions();
+  updateRemainingMoves();
+  gamePlay();
 };
+
+// Spiel starten
+mainGame();
