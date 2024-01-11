@@ -5,3 +5,90 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: "Arial", sans-serif;
+  overflow: hidden;
+  background: url(../img/windowsxp.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100lvh;
+  width: 100%;
+}
+
+/* Game Styles */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100lvh;
+  width: 100%;
+}
+
+#theGame {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.title-bar-text {
+  font-size: 1rem;
+}
+
+.rounds,
+h1,
+.movesDisplay {
+  background-color: #c0c0c0;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+h1 {
+  font-size: 0.5rem;
+}
+
+.scoreboard,
+.userInput {
+  background-color: #c0c0c0;
+  padding: 1rem;
+}
+
+.userInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.player h2,
+.computer h2,
+.result {
+  margin-bottom: 1rem;
+}
+
+.section {
+  margin-bottom: 1rem;
+}
+
+.scoreboard,
+.userInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player,
+.computer {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.player,
+.computer,
+.userInput {
+  background-color: #c0c0c0;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
