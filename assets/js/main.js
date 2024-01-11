@@ -68,7 +68,7 @@ const mainGame = () => {
   // Ende des Spiels
 
   const gameOver = () => {
-    const playerButtons = document.querySelector(".userInput");
+    const playerButtons = document.querySelector(".buttons");
     const resultDisplay = document.querySelector(".result");
 
     playerButtons.style.display = "none";
@@ -90,7 +90,7 @@ const mainGame = () => {
     moves = 0;
 
     // User Buttons wieder einblenden
-    const playerButtons = document.querySelector(".userInput");
+    const playerButtons = document.querySelector(".buttons");
     playerButtons.style.display = "block";
 
     // Moves zurücksetzen
